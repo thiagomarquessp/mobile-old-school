@@ -3,16 +3,18 @@
 
 
 When(/^I press button Sou Novo$/) do
-  #touch("Button id:'btNewUser'") 
+  #touch("Button id:'btNewUser'")
   3.times {perform_action('drag', 99, 1, 50, 50, 5)}
-  touch("tintbutton id:'btRegisteredUser'")
+  touch("android.widget.Button")
 end
 
 And(/^I fill out the registration initial fields$/) do
   @phone_number = Faker::Base.numerify('1199#######').to_s
   @senhapadrao  = 'inicial1234'
   enter_text("android.widget.EditText id:'etPhoneNumber'", @phone_number)
-  touch("tintbutton id:'btLoginWithPhone'")
+  hide_soft_keyboard
+  touch("android.widget.Button id:'btLoginWithPhone'")
+  #touch("android.widget.Button id: 'btLoginWithPhone'")
   sleep 10
   enter_text("android.widget.EditText id:'etPassword'", 'inicial1234')
   hide_soft_keyboard

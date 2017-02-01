@@ -4,3 +4,12 @@ reinstall app
 reinstall apps
 reinstall_apps
 exit
+reinstall_apps
+start_test_server_in_background
+query("android.widget.Button")
+touch("android.widget.Button")
+exit
+start_test_server_in_background
+query("android.widget.Button")
+query("android.widget.Button")
+exit

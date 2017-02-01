@@ -13,3 +13,6 @@ start_test_server_in_background
 query("android.widget.Button")
 query("android.widget.Button")
 exit
+start_test_server_in_background
+query("android.widget.EditText")
+exit

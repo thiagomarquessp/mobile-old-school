@@ -3,7 +3,6 @@
 
 
 When(/^I press button Sou Novo$/) do
-  #touch("Button id:'btNewUser'")
   3.times {perform_action('drag', 99, 1, 50, 50, 5)}
   touch("android.widget.Button")
 end
@@ -14,13 +13,14 @@ And(/^I fill out the registration initial fields$/) do
   enter_text("android.widget.EditText id:'etPhoneNumber'", @phone_number)
   hide_soft_keyboard
   touch("android.widget.Button id:'btLoginWithPhone'")
-  #touch("android.widget.Button id: 'btLoginWithPhone'")
   sleep 10
   enter_text("android.widget.EditText id:'etPassword'", 'inicial1234')
+  sleep 02
   hide_soft_keyboard
+  sleep 02
   enter_text("android.widget.EditText id:'etConfirmPassword'", 'inicial1234')
   hide_soft_keyboard
-  touch("tintbutton id:'btConfirm'")
+  touch("android.widget.Button id:'btConfirm'")
 end
 
 And(/^I fill the additional fields$/) do
